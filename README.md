@@ -1,6 +1,6 @@
 # RISC-V-Reference-SoC-Tapeout-Program-week3
 ## Synthesis and GLS of BabySoC
-### Labs
+### Labs (Synthesis)
 ### Load the verilog Files
 ```
 yosys
@@ -42,6 +42,11 @@ stat
 ```
 write_verilog -noattr /home/souhardyab/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
 ```
+### GLS of BabySoC
+```
+iverilog -o /home/souhardyab/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/souhardyab/VLSI/VSDBabySoC/src/include -I /home/souhardyab/VLSI/VSDBabySoC/src/module /home/souhardyab/VLSI/VSDBabySoC/src/module/testbench.v
+```
+
 
 
 
