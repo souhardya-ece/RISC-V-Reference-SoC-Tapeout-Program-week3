@@ -44,7 +44,17 @@ write_verilog -noattr /home/souhardyab/VLSI/VSDBabySoC/output/post_synth_sim/vsd
 ```
 ### GLS of BabySoC
 ```
-iverilog -o /home/souhardyab/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/souhardyab/VLSI/VSDBabySoC/src/include -I /home/souhardyab/VLSI/VSDBabySoC/src/module /home/souhardyab/VLSI/VSDBabySoC/src/module/testbench.v
+cd VLSI
+cd VSDBabySoC 
+iverilog -o /home/souhardy
+ab/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYN
+TH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/souhardyab/VLSI/VSDBabySo
+C/src/include -I /home/souhardyab/VLSI/VSDBabySoC/src/module /home/sou
+hardyab/VLSI/VSDBabySoC/src/module/testbench.v
+cd output
+cd post_synth_sim
+./post_synth_sim.out
+gtkwave post_synth_sim.vcd
 ```
 
 
