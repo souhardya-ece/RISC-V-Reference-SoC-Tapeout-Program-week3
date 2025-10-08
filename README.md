@@ -8,16 +8,26 @@ read_verilog /home/souhardyab/VLSI/VSDBabySoC/src/module/vsdbabysoc.v
 read_verilog -I /home/souhardyab/VLSI/VSDBabySoC/src/include /home/souhardyab/VLSI/VSDBabySoC/src/module/rvmyth.v
 read_verilog -I /home/souhardyab/VLSI/VSDBabySoC/src/include /home/souhardyab/VLSI/VSDBabySoC/src/module/clk_gate.v
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Yosys.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Read_vsd.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/read_rv.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/read_clk.png)
 ### Load the Liberty Files
 ```
 read_liberty -lib /home/souhardyab/VLSI/VSDBabySoC/src/lib/avsdpll.lib
 read_liberty -lib /home/souhardyab/VLSI/VSDBabySoC/src/lib/avsddac.lib
 read_liberty -lib /home/souhardyab/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Lib.png)
 ### Run Synthesis
 ```
 synth -top vsdbabysoc
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Top.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Remove.png)
 ### Map D f/f to standard cell
 ```
 dfflibmap -liberty /home/souhardyab/VLSI/VSDBabySoC/src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -34,14 +44,22 @@ setundef -zero
 clean -purge
 rename -enumerate
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Flat.png)
 ### Statistics
 ```
 stat
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Stat.png)
 ### Write Netlist
 ```
 write_verilog -noattr /home/souhardyab/VLSI/VSDBabySoC/output/post_synth_sim/vsdbabysoc.synth.v
+show
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Write.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Synth.png)
 ### GLS of BabySoC
 ```
 cd VLSI
@@ -56,6 +74,9 @@ cd post_synth_sim
 ./post_synth_sim.out
 gtkwave post_synth_sim.vcd
 ```
+### Output
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Post_synth.png)
+
 
 
 
