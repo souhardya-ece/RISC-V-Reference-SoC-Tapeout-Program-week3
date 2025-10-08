@@ -76,11 +76,10 @@ gtkwave post_synth_sim.vcd
 ```
 ### Output
 ![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Post_synth.png)
-
-
-
-
-
-
-
 ## Static Timing Analysis
+### Introduction
+Static timimg analysis consists of three parts those are checks,constraints,library.
+### Checks
+Here we can consider timing path (start point:-flop clk pin/input pin,end point:-flop d pin/output pin)
+
+
