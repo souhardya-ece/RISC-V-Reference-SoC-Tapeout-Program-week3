@@ -81,5 +81,9 @@ gtkwave post_synth_sim.vcd
 Static timimg analysis consists of three parts those are checks,constraints,library.
 ### Checks
 Here we can consider timing path (start point:-flop clk pin/input pin,end point:-flop d pin/output pin)
+Arrival time is the required for a singnal from go to start point to end point.
+Required  time is the expected time for a singal to arrive at the end point.Suppose a signal reached at the end point between 1 to 3 ns => 1< arrival time(=3.1) <3 
+Slack is the difference between the arrival time and the expected time .
+Min slack =2.1(hold time) max slack = -.1 (setup time).
 
 
