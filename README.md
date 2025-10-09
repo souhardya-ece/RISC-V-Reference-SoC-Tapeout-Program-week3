@@ -92,5 +92,19 @@ Min slack =2.1(hold time) max slack = -.1 (setup time).
 4. In2out:- Where the the input is in pin and output is out pin
 Clock Gating:- Sometimes the clk does not always go into buffer . With some logic it goes into the register. So the power is reduce rapidly. 
 Recovery and removal:- Sometimes there are some async pin in the register so there are is a valid timing path get created.
+Data to data:- it gots from clk to async comb logic
+Latch(borrow/given):-flop to latch or vise versa.
+### Slew/Transition Analysis:-
+1. Data:- We check the data path and measure the max and min.
+2. Clk:-Here we can also do the same for the clk.
+### Load Analysis
+1. Fanout:- Max similar kind of thing that is connected to the output.
+2. Capacitance:- There are max and min value at the load of the capacitance.
+### Clock Analysis
+1. Skew :- latency difference bw different path(from clk to the reg i/p)
+2. Pulse width:- clk that is same goes to the each and every clk (in bw there are some paracitic)
+
+
+
 
 
