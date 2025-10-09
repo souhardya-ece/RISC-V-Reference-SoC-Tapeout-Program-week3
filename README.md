@@ -90,10 +90,10 @@ Min slack =2.1(hold time) max slack = -.1 (setup time).
 2. In2reg:- Where the input is in pin and output is register d pin.
 3. Reg2out:- Where the input is register q pin and the output is out pin
 4. In2out:- Where the the input is in pin and output is out pin
-Clock Gating:- Sometimes the clk does not always go into buffer . With some logic it goes into the register. So the power is reduce rapidly. 
-Recovery and removal:- Sometimes there are some async pin in the register so there are is a valid timing path get created.
-Data to data:- it gots from clk to async comb logic
-Latch(borrow/given):-flop to latch or vise versa.
+5.Clock Gating:- Sometimes the clk does not always go into buffer . With some logic it goes into the register. So the power is reduce rapidly. 
+6.Recovery and removal:- Sometimes there are some async pin in the register so there are is a valid timing path get created.
+7.Data to data:- it gots from clk to async comb logic
+8.Latch(borrow/given):-flop to latch or vise versa.
 ### Slew/Transition Analysis:-
 1. Data:- We check the data path and measure the max and min.
 2. Clk:-Here we can also do the same for the clk.
@@ -104,7 +104,8 @@ Latch(borrow/given):-flop to latch or vise versa.
 1. Skew :- latency difference bw different path(from clk to the reg i/p)
 2. Pulse width:- clk that is same goes to the each and every clk (in bw there are some paracitic)
 ### Reg2Reg anlysis
-First we consider a comb ckt input ports have some required arrival time(delay) and in between the pin and the gate there is some wire which have some delay gates also consists of delay note that input and the output pin does not have its won delay. so we convert the whole ckt into a DAC directed ascyclic graph and we calculate the arrival time(aat) of the each node of that graph now there might be the case where two arrival time of a node (min/max).
+First we consider a comb ckt input ports have some required arrival time(delay) and in between the pin and the gate there is some wire which have some delay gates also consists of delay note that input and the output pin does not have its won delay. so we convert the whole ckt into a DAC directed ascyclic graph and we calculate the arrival time(Actual arrival time:- Time at any node where is the transition of first rise clk edge) of the each node of that graph now there might be the case where two arrival time(cosider worst case) of a node (min/max).
+Required arrival time:- time at any node where the transition of within the clk.Let the output pin have some rat so we sub the delay and calculate the each node rat . some node have some two rat consider th best case.
 
 
 
