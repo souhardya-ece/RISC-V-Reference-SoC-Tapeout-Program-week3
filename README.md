@@ -103,6 +103,10 @@ Latch(borrow/given):-flop to latch or vise versa.
 ### Clock Analysis
 1. Skew :- latency difference bw different path(from clk to the reg i/p)
 2. Pulse width:- clk that is same goes to the each and every clk (in bw there are some paracitic)
+### Reg2Reg anlysis
+First we consider a comb ckt input ports have some required arrival time(delay) and in between the pin and the gate there is some wire which have some delay gates also consists of delay note that input and the output pin does not have its won delay. so we convert the whole ckt into a DAC directed ascyclic graph and we calculate the arrival time(aat) of the each node of that graph now there might be the case where two arrival time of a node (min/max).
+
+
 
 
 
