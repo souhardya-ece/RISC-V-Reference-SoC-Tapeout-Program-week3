@@ -106,6 +106,8 @@ Min slack =2.1(hold time) max slack = -.1 (setup time).
 ### Reg2Reg anlysis
 First we consider a comb ckt input ports have some required arrival time(delay) and in between the pin and the gate there is some wire which have some delay gates also consists of delay note that input and the output pin does not have its won delay. so we convert the whole ckt into a DAC directed ascyclic graph and we calculate the arrival time(Actual arrival time:- Time at any node where is the transition of first rise clk edge) of the each node of that graph now there might be the case where two arrival time(cosider worst case) of a node (min/max).
 Required arrival time:- time at any node where the transition of within the clk.Let the output pin have some rat so we sub the delay and calculate the each node rat . some node have some two rat consider th best case.
+Slack comp:- Rat-aat if it is +ve then the design meet the expectation.
+
 
 
 
