@@ -85,5 +85,12 @@ Arrival time is the required for a singnal from go to start point to end point.
 Required  time is the expected time for a singal to arrive at the end point.Suppose a signal reached at the end point between 1 to 3 ns => 1< arrival time(=3.1) <3 
 Slack is the difference between the arrival time and the expected time .
 Min slack =2.1(hold time) max slack = -.1 (setup time).
+### Types os setup and hold analysis
+1. Reg2reg:- Where the input is launch flop(clk) and output is capture flop(d pin).
+2. In2reg:- Where the input is in pin and output is register d pin.
+3. Reg2out:- Where the input is register q pin and the output is out pin
+4. In2out:- Where the the input is in pin and output is out pin
+Clock Gating:- Sometimes the clk does not always go into buffer . With some logic it goes into the register. So the power is reduce rapidly. 
+Recovery and removal:- Sometimes there are some async pin in the register so there are is a valid timing path get created.
 
 
