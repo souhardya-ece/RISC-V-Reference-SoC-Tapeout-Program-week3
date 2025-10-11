@@ -103,6 +103,7 @@ Min slack =2.1(hold time) max slack = -.1 (setup time).
 ### Clock Analysis
 1. Skew :- latency difference bw different path(from clk to the reg i/p)
 2. Pulse width:- clk that is same goes to the each and every clk (in bw there are some paracitic)
+
 ### CKT Analysis
 
 First we consider a comb ckt input ports have some required arrival time(delay) and in between the pin and the gate there is some wire which have some delay gates also consists of delay note that input and the output pin does not have its won delay. so we convert the whole ckt into a DAC directed ascyclic graph(for more accurate it could be pin node convention => each node have its i/p output slack ) and we calculate the arrival time(Actual arrival time:- Time at any node where is the transition of first rise clk edge) of the each node of that graph now there might be the case where two arrival time(cosider worst case) of a node (min/max).
@@ -117,16 +118,17 @@ Negative latch(active when negative latch) and Positive latch(active when positi
 
 When we consider a clk and its inv version it have some distorted value .Rising and falling shifted region is known as jitter through eye diagram.
 
-So we get the equation in setup analysis  theta+del1(arrival time)< T+del2-s-su(required time) => Convert this into txtual representation. Slack =r-a =+ve or 0
+So we get the equation in setup analysis  theta+del1(arrival time=>push out)< T+del2-s-su(required time=> clk pull in) => Convert this into txtual representation. Slack =r-a =+ve or 0
 
-so we get the equation in hold analysis  theta+del1(arrival time=> clk push out)> H+del2+HU (required time=> clk push in) => Convert this into txtual representation. Slack =a-r =+ve or 0
+so we get the equation in hold analysis  theta+del1(arrival time=> clk pull in)> H+del2+HU (required time=> clk push out) => Convert this into txtual representation. Slack =a-r =+ve or 0
 
 OCV(on chip variation):-Etching is the fabrication process that diectly effect the delay . It effects on W/L ratio which impact in drain current.
 
 Oxide Thickness:- It can effect the delay like cox=eox/tox tox changes so that it will effect to the drain current.
 
 An cmos inv is a simple rc n/w so the delay will depend upon r that is the function of drain current.
-So we increase and decrease each delay by +-20% so that in the setup time the slack may be worse.
+
+So we increase and decrease each delay by +-20%(ocv) so that in the setup time the slack may be worse.but when we consider the extra pessimism the slck become positive. and the same case for hold analysis.
 
 
 
