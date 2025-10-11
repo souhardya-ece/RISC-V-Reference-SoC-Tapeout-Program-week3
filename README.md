@@ -104,16 +104,29 @@ Min slack =2.1(hold time) max slack = -.1 (setup time).
 1. Skew :- latency difference bw different path(from clk to the reg i/p)
 2. Pulse width:- clk that is same goes to the each and every clk (in bw there are some paracitic)
 ### CKT Analysis
+
 First we consider a comb ckt input ports have some required arrival time(delay) and in between the pin and the gate there is some wire which have some delay gates also consists of delay note that input and the output pin does not have its won delay. so we convert the whole ckt into a DAC directed ascyclic graph(for more accurate it could be pin node convention => each node have its i/p output slack ) and we calculate the arrival time(Actual arrival time:- Time at any node where is the transition of first rise clk edge) of the each node of that graph now there might be the case where two arrival time(cosider worst case) of a node (min/max).
+
 Required arrival time:- time at any node where the transition of within the clk.Let the output pin have some rat so we sub the delay and calculate the each node rat . some node have some two rat consider th best case.
+
 Slack comp:- Rat-aat if it is +ve then the design meet the expectation.calculate the slack of each node. So tune the slack we cosider the worst case condition this is graph based anlysis.on the other hand real path  would be path based analysis.
+
 The delay or the time from clk to d pin should be less than the time period of the clk. If we consider cts the del1-del2=skew
+
 Negative latch(active when negative latch) and Positive latch(active when positive level) both combine to make a filp flop. At negative level the amount of time d goes to Qm  is called libery setup time(before rising edge).At positive level the data is goes from inv5 o/p to q. Hold time is the time d is valid after positive edge.
+
 When we consider a clk and its inv version it have some distorted value .Rising and falling shifted region is known as jitter through eye diagram.
+
 So we get the equation in setup analysis  theta+del1(arrival time)< T+del2-s-su(required time) => Convert this into txtual representation. Slack =r-a =+ve or 0
-so we get the equation in hold analysis  theta+del1(arrival time)> H+del2+HU (required time) => Convert this into txtual representation. Slack =a-r =+ve or 0
+
+so we get the equation in hold analysis  theta+del1(arrival time=> clk push out)> H+del2+HU (required time=> clk push in) => Convert this into txtual representation. Slack =a-r =+ve or 0
+
 OCV(on chip variation):-Etching is the fabrication process that diectly effect the delay . It effects on W/L ratio which impact in drain current.
-Oxide Thickness:-
+
+Oxide Thickness:- It can effect the delay like cox=eox/tox tox changes so that it will effect to the drain current.
+
+An cmos inv is a simple rc n/w so the delay will depend upon r that is the function of drain current.
+So we increase and decrease each delay by +-20% so that in the setup time the slack may be worse.
 
 
 
