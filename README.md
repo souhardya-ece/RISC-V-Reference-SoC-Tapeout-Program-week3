@@ -110,6 +110,11 @@ Slack comp:- Rat-aat if it is +ve then the design meet the expectation.calculate
 The delay or the time from clk to d pin should be less than the time period of the clk. If we consider cts the del1-del2=skew
 Negative latch(active when negative latch) and Positive latch(active when positive level) both combine to make a filp flop. At negative level the amount of time d goes to Qm  is called libery setup time(before rising edge).At positive level the data is goes from inv5 o/p to q. Hold time is the time d is valid after positive edge.
 When we consider a clk and its inv version it have some distorted value .Rising and falling shifted region is known as jitter through eye diagram.
+So we get the equation in setup analysis  theta+del1(arrival time)< T+del2-s-su(required time) => Convert this into txtual representation. Slack =r-a =+ve or 0
+so we get the equation in hold analysis  theta+del1(arrival time)> H+del2+HU (required time) => Convert this into txtual representation. Slack =a-r =+ve or 0
+OCV(on chip variation):-Etching is the fabrication process that diectly effect the delay . It effects on W/L ratio which impact in drain current.
+Oxide Thickness:-
+
 
 
 
