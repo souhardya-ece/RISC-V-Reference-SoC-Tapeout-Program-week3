@@ -130,6 +130,9 @@ An cmos inv is a simple rc n/w so the delay will depend upon r that is the funct
 
 So we increase and decrease each delay by +-20%(ocv) so that in the setup time the slack may be worse.but when we consider the extra pessimism the slck become positive. and the same case for hold analysis.
 
+## Generate Timing Graphs with OpenSTA 
+
+
 
 
 
