@@ -131,6 +131,23 @@ An cmos inv is a simple rc n/w so the delay will depend upon r that is the funct
 So we increase and decrease each delay by +-20%(ocv) so that in the setup time the slack may be worse.but when we consider the extra pessimism the slck become positive. and the same case for hold analysis.
 
 ## Generate Timing Graphs with OpenSTA 
+To generate the timing grapha and do  the PVT corner analysis for post synthesis timing of the RISC-V .First of all Clone the open sta git repository
+```
+git clone https://github.com/parallaxsw/OpenSTA.git
+cd OpenSTA
+```
+Lets take an example of an lib file sky130_fd_sc_hd__tt_025C_1v80.lib and how to generate the worst setup time ,worst  hold time , WNS , TNS. 
+```
+read_liberty sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty avsdpll.lib
+read_liberty asvddac.lib
+read_verilog vsdbabysoc.synth.v
+link_design vsdbabysoc
+current design
+read_sdc vsdbabysoc_synthesis.sdc
+report_checks -path_delay min_max
+```
+
 
 
 
