@@ -136,6 +136,7 @@ To generate the timing grapha and do  the PVT corner analysis for post synthesis
 git clone https://github.com/parallaxsw/OpenSTA.git
 cd OpenSTA
 ```
+Then inside the file location(..\\home\souhardyab\VLSI\VSDBabySoC\OpenSTA\examples\timing_libs) put the all required files which is in the file repo and the sky 130 lib files which is in this location (..\\home\souhardyab\VLSI\VSDBabySoC\skywater-pdk-libs-sky130_fd_sc_hd\timing) then rune 'sta'
 Lets take an example of an lib file sky130_fd_sc_hd__tt_025C_1v80.lib and how to generate the worst setup time ,worst  hold time , WNS , TNS. 
 ```
 read_liberty sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -147,6 +148,18 @@ current design
 read_sdc vsdbabysoc_synthesis.sdc
 report_checks -path_delay min_max
 ```
+### Output
+![image alt]()
+![image alt]()
+![image alt]()
+
+Likewise do all the sky 130 lib file with PVT corner and get the worst setup time ,worst  hold time , WNS , TNS and generate the graph out of these data
+![image alt]()
+### Graphs
+![image alt]()
+![image alt]()
+![image alt]()
+![image alt]()
 
 
 
