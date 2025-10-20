@@ -149,17 +149,17 @@ read_sdc vsdbabysoc_synthesis.sdc
 report_checks -path_delay min_max
 ```
 ### Output
-![image alt]()
-![image alt]()
-![image alt]()
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/1.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/2.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/3.png)
 
 Likewise do all the sky 130 lib file with PVT corner and get the worst setup time ,worst  hold time , WNS , TNS and generate the graph out of these data
-![image alt]()
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Sta_DATA.png)
 ### Graphs
-![image alt]()
-![image alt]()
-![image alt]()
-![image alt]()
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Worst_setup_slack.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/Worst%20hold_slack.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/WNS.png)
+![image alt](https://github.com/souhardya-ece/RISC-V-Reference-SoC-Tapeout-Program-week3/blob/main/Images/TNS.png)
 
 
 
